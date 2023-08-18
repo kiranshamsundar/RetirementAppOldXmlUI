@@ -4,9 +4,9 @@ This project will be helpful to develop ,understand following below skills ,also
 
 • Learn how to track errors and crashes in your apps.
 
-• Learn how to track any event triggered within your apps.
+• Learn how to track any event triggered within apps.
 
-• Apply complete CI/CD flows in your app development process.
+• Apply complete CI/CD flows in app development process.
 
 • Use GitHub to trigger code checks and app distribution to users.
 
@@ -24,4 +24,4 @@ This project will be helpful to develop ,understand following below skills ,also
 
 • Enable product discovery with the help of Analytics in the App Center.
 
-• Test your app in a wide array of cloud-hosted physical devices.
+• Test app in a wide array of cloud-hosted physical devices.
