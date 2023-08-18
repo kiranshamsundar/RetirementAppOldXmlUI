@@ -13,7 +13,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        AppCenter.start(application, "105a2095-ab88-4f57-a366-47068b73d899", Analytics::class.java, Crashes::class.java);
+        AppCenter.start(
+            application,
+            "105a2095-ab88-4f57-a366-47068b73d899",
+            Analytics::class.java,
+            Crashes::class.java
+        );
 
         calculateButton.setOnClickListener {
             // Crashes.generateTestCrash()
@@ -24,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 val monthly = monthlySavingsEditText.text.toString().toFloat()
                 val current = currentEditText.text.toString().toFloat()
 
-                val properties:HashMap<String, String> = HashMap<String, String>()
+                val properties: HashMap<String, String> = HashMap<String, String>()
                 properties.put("interest_rate", interestRate.toString())
                 properties.put("current_age", currentAge.toString())
                 properties.put("retirement_age", retirementAge.toString())
@@ -38,8 +43,10 @@ class MainActivity : AppCompatActivity() {
                     Analytics.trackEvent("wrong_age", properties)
                 }
 
-                resultTextView.text = "At the current rate of $interestRate%, saving \$$monthly a month you will have \$X by $retirementAge."
-            } catch(ex: Exception){
+                val resultString =
+                    "At the current rate of $interestRate%, saving \$$monthly a month you will have \$X by $retirementAge."
+                resultTextView.text = resultString
+            } catch (ex: Exception) {
                 Analytics.trackEvent(ex.message)
             }
         }
